@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="time">
+        <div class="circle" style="--clr:#ff2972;">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="hh"></circle>
+            </svg>
+                
+
+         <div id="hours">00</div>
+        </div>
+        <div class="circle" style="--clr:#ff2972;">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="mm"></circle>
+            </svg>
+            
+            
+            <div id="minute">00</div>
+        </div>
+        <div class="circle" style="--clr:#ff2972;">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="ss"></circle>
+            </svg>
+            <div id="second">00</div>
+        </div>
+        <div class="ap">
+        <div id="ampm">AM</div>
+        </div>
+    </div>
+    
+    <script> 
+        function updateClock() {
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minute');
+        let seconds = document.getElementById('second');
+        let ampm = document.getElementById('ampm');
+    
+        let hh = document.getElementById('hh');
+        let mm = document.getElementById('mm');
+        let ss = document.getElementById('ss');
+    
+        let currentDate = new Date();
+        let h = currentDate.getHours();
+        let m = currentDate.getMinutes();
+        let s = currentDate.getSeconds();
+        let am = h >= 12 ? "PM" : "AM";
+    
+        // convert 24hr clock to 12hr clock
+        if (h > 12){
+            h = h -12;
+        }
+        // add zero before single digit number
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+    
+        hours.innerHTML = h;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
+        ampm.innerHTML = am;
+    }
+        setInterval(updateClock, 1000);
+    </script>
+    
+
+</body>
+</html>

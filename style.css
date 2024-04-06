@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=poopins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #050505;
+}
+#time
+{
+    display: flex;
+    gap: 40px;
+    color: #06f806;
+    
+}
+#time .circle
+{
+    position: relative;
+     width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time .circle svg
+{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+
+
+}
+
+#time .circle svg circle
+{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: #070707;
+    stroke-width: 4;
+    transform: translate(5px,5px);
+}
+#time .circle svg circle:nth-child(2)
+{
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+
+}
+
+#time div
+{
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+#time .ap
+{position: relative;
+    font: 1em;
+    transform: translate(-20px);
+}
